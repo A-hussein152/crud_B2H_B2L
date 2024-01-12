@@ -3,7 +3,7 @@ session_start();
 include 'db.php';
 global $db;
 
-<<<<<<< HEAD
+
 $id = filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
 if ($id){
     $query = $db->prepare('DELETE FROM fietsen WHERE id =:id');
@@ -18,7 +18,6 @@ header("location: index.php");
     die('ERROR 404: bike not found');
 }
 
-=======
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
 if ($id) {
@@ -33,5 +32,4 @@ if ($id) {
     header('Location: index.php');
 } else {
     die('Error 404: Bike not found');
-}
->>>>>>> e1f5540a7fee19f0973386504ac26ff40f4ecbbc
+};

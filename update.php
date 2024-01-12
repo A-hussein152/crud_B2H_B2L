@@ -79,7 +79,6 @@ if (isset($_POST['submit'])) {
 <body>
 <form method="post">
     <label for="type">Type</label>
-<<<<<<< HEAD
     <input type="text" name="type" id="type" value="<?= $bike ['type']?>"><br>
     <label for="price">Prijs</label>
     <input type="number" name="price" id="price" value="<?= $bike ['prijs']?> step="0.01"><br>
@@ -87,6 +86,7 @@ if (isset($_POST['submit'])) {
     <select name="category" id="category">
         <?php foreach ($categories as $category): ?>
         <option value="<?= $category['id'] ?>" <?php if ($bike['categorie_id'] === $category['id']){echo 'selected';}?>><?= $category['naam'] ?></option>
+        <?php endforeach; ?>
     <input type="text" name="type" id="type" value="<?= $bike['type'] ?>"><br>
     <label for="price">Prijs</label>
     <input type="number" name="price" id="price" step="0.01" value="<?= $bike['prijs'] ?>"><br>

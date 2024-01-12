@@ -47,13 +47,11 @@ if (isset($_SESSION['message'])){
             <td><?= $bike['type']?></td>
             <td><?= $bike['prijs']?></td>
             <td><?= $category['naam'] ?></td>
-<<<<<<< HEAD
+
             <td><a href="update.php?id=<?= $bike['id']?>">update</a></td>
             <td><a href="delete.php?id=<?= $bike['id']?>">delete</a></td>
-=======
             <td><a href="update.php?id=<?= $bike['id']?>">Update</a></td>
             <td><a href="delete.php?id=<?= $bike['id']?>">Delete</a></td>
->>>>>>> e1f5540a7fee19f0973386504ac26ff40f4ecbbc
         </tr>
     <?php endforeach;?>
     </tbody>
