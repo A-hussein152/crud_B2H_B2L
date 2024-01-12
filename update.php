@@ -2,7 +2,6 @@
 include 'db.php';
 global $db;
 
-<<<<<<< HEAD
 $id = filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
 
 if ($id){
@@ -13,7 +12,7 @@ if ($id){
 
 }else{
     die('ERROR 404: bike not found');
-=======
+
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
 if ($id){
@@ -23,7 +22,7 @@ if ($id){
     $bike = $query->fetch(PDO::FETCH_ASSOC);
 } else{
     die('Error 404: Bike not found');
->>>>>>> e1f5540a7fee19f0973386504ac26ff40f4ecbbc
+
 }
 
 $query = $db->prepare('SELECT * FROM categorie');
@@ -38,7 +37,7 @@ if (isset($_POST['submit'])) {
         if (!$price || !$category) {
             $alert = "vul geldige getallen in";
         } else {
-<<<<<<< HEAD
+
            //todo:update
             $query =$db->prepare('UPDATE fietsen SET type =:type , prijs =:price ,categorie_id =:category WHERE id = :id ');
             $query->bindParam("type",$_POST['type']);
@@ -50,7 +49,6 @@ if (isset($_POST['submit'])) {
             }else{
                 $alert = "Er is iets mis gegaan met het updaten";
             }
-=======
           $query = $db->prepare('UPDATE fietsen SET type = :type, prijs = :price, categorie_id = :category WHERE id = :id');
           $query->bindParam('type', $_POST['type']);
           $query->bindParam('price', $price);
@@ -61,7 +59,6 @@ if (isset($_POST['submit'])) {
           } else {
               $alert = "Er is iets mis gegaan met het updaten";
           }
->>>>>>> e1f5540a7fee19f0973386504ac26ff40f4ecbbc
         }
     } else {
         $alert = "Vul alle velden in";
@@ -90,7 +87,6 @@ if (isset($_POST['submit'])) {
     <select name="category" id="category">
         <?php foreach ($categories as $category): ?>
         <option value="<?= $category['id'] ?>" <?php if ($bike['categorie_id'] === $category['id']){echo 'selected';}?>><?= $category['naam'] ?></option>
-=======
     <input type="text" name="type" id="type" value="<?= $bike['type'] ?>"><br>
     <label for="price">Prijs</label>
     <input type="number" name="price" id="price" step="0.01" value="<?= $bike['prijs'] ?>"><br>
@@ -98,7 +94,7 @@ if (isset($_POST['submit'])) {
     <select name="category" id="category">
         <?php foreach ($categories as $category): ?>
             <option value="<?= $category['id'] ?>" <?php if ($bike['categorie_id'] === $category['id']){ echo 'selected';}?>><?= $category['naam'] ?></option>
->>>>>>> e1f5540a7fee19f0973386504ac26ff40f4ecbbc
+
         <?php endforeach; ?>
     </select><br>
     <button name="submit">verzenden</button>
